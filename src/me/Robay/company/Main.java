@@ -1,6 +1,8 @@
 package me.Robay.company;
 
 
+
+import me.Robay.company.Commands.Commands;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -23,9 +25,16 @@ public class Main {
         jda.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
         jda.setBulkDeleteSplittingEnabled(false);
         jda.setCompression(Compression.NONE);
-        // registerListeners();
+        registerListeners();
         jda.build();
-
-
     }
-}
+
+
+        public static void registerListeners() {
+
+            jda.addEventListeners(new Commands());
+        }
+    }
+
+
+
