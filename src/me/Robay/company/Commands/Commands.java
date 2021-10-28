@@ -8,10 +8,6 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 
-
-
-
-
 public class Commands extends ListenerAdapter {
 
 
@@ -19,7 +15,6 @@ public class Commands extends ListenerAdapter {
 
 
         String[] args = event.getMessage().getContentRaw().split("\\s+");
-
 
 
         if (args[0].equalsIgnoreCase(Main.prefix + "help")) {
@@ -36,5 +31,24 @@ public class Commands extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
 
         }
+        if (args[0].equalsIgnoreCase(Main.prefix + "team")) {
+
+            if (args[1].isEmpty()) {
+                EmbedBuilder embed = new EmbedBuilder();
+                embed.setTitle("Please enter a Team");
+                embed.setColor(0x132d63);
+
+
+                event.getChannel().sendMessage(embed.build()).queue();
+            } else {
+
+                TeamCommand teamCommand = new TeamCommand(args[1], event);
+
+
+            }
+
+
+        }
+
     }
 }
