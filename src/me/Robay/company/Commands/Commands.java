@@ -33,7 +33,7 @@ public class Commands extends ListenerAdapter {
         }
         if (args[0].equalsIgnoreCase(Main.prefix + "team")) {
 
-            if (args[1].isEmpty()) {
+            if (args.length == 1) {
                 EmbedBuilder embed = new EmbedBuilder();
                 embed.setTitle("Please enter a Team");
                 embed.setColor(0x132d63);
