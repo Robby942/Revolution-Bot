@@ -59,7 +59,7 @@ public class RosterCreator {
 
                 }
 
-                System.out.println(this.players.toString());
+                System.out.println("Console Debug: " + this.players.toString());
 
 
             }
