@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class RosterCreator {
 
     ArrayList<String> players = new ArrayList<String>();
+    ArrayList<String> ratings = new ArrayList<String>();
 
     public RosterCreator(String team) {
         try {
@@ -51,6 +52,7 @@ public class RosterCreator {
                 for (int i = 0; i < array.size(); i++) {
                     if (array.get(i).equals(team.toUpperCase())) {
                         players.add(array.get(i - 6).toString());
+                        ratings.add(array.get(i + 1).toString());
 
 
                     }
@@ -76,6 +78,12 @@ public class RosterCreator {
 
         return this.players;
 
+
+    }
+
+    public ArrayList<String> getRatings() {
+
+        return this.ratings;
 
     }
 
