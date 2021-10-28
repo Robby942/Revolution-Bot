@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Usernames extends ListenerAdapter {
     String username;
     JSONObject object;
-    JSONObject object2;
     JSONArray array;
     String UUID;
     ArrayList<String> nameList = new ArrayList<String>();
