@@ -18,9 +18,9 @@ public class Main {
 
     public static void main(String[] args) throws LoginException {
 
-        jda = JDABuilder.createDefault("ODkzMDE0NDA5OTU2NDM4MDE2.YVVSeg.R8KlhswH-o_phdBfuE0J22fPFlU");
+        jda = JDABuilder.createDefault("");
 
-        jda.setActivity(Activity.playing("Blockey Hockey"));
+        jda.setActivity(Activity.playing(""));
         jda.setStatus(OnlineStatus.ONLINE);
         jda.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
         jda.setBulkDeleteSplittingEnabled(false);
