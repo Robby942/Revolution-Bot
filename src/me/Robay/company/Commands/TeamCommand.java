@@ -31,11 +31,12 @@ public class TeamCommand {
             embed.addField("", "", true);
             embed.addField("", "", true);
             for (int i = 0; i < thirteen.getRoster().size(); i++) {
-                embed.addField(thirteen.getRoster().get(i).toString(), "Player", true);
+
+
+                embed.addField(thirteen.getRoster().get(i).toString(), "```" + thirteen.getRatings().get(i).toString() +  "```", true);
             }
 
             embed.setColor(thirteen.teamColor);
-
 
             event.getChannel().sendMessage(embed.build()).queue();
 
