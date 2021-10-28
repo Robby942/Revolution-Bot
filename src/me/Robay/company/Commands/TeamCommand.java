@@ -6,8 +6,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public class TeamCommand {
 
-    String team;
-
+ 
     public TeamCommand(String teamSearched, GuildMessageReceivedEvent event) {
         Thirteen thirteen = new Thirteen();
         if (!thirteen.checkForTeamMatch(teamSearched)) {
