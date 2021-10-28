@@ -15,7 +15,6 @@ import javax.security.auth.login.LoginException;
 public class Main {
     public static JDABuilder jda;
     public static String prefix = "!";
-    public static boolean isSearching;
 
 
     public static void main(String[] args) throws LoginException {
