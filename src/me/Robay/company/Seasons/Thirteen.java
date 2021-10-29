@@ -19,7 +19,8 @@ public class Thirteen {
     public ArrayList<String> SUR = new ArrayList<String>();
     ArrayList<String> roster = new ArrayList<String>();
     ArrayList<String> teamData = new ArrayList<String>();
-    ArrayList<String> ratings = new ArrayList<String>();
+    ArrayList<Double> ratings = new ArrayList<Double>();
+    ArrayList<String> franchiseRoles = new ArrayList<String>();
     public int teamColor;
 
 
@@ -83,6 +84,7 @@ public class Thirteen {
             this.roster = rosterCreator.getPlayers();
             this.ratings = rosterCreator.getRatings();
             addTeamData(teamSearched);
+            this.franchiseRoles = rosterCreator.getFranchiseRoles();
 
 
             return true;
@@ -145,10 +147,14 @@ public class Thirteen {
         return this.teamData;
     }
 
-    public ArrayList<String> getRatings() {
-
+    public ArrayList<Double> getRatings() {
         return this.ratings;
 
     }
 
-}
+    public ArrayList<String> getFranchiseRoles() {
+
+        return this.franchiseRoles;
+
+    }
+
