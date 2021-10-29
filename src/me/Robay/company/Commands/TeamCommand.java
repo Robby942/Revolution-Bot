@@ -6,7 +6,8 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public class TeamCommand {
 
- 
+
+
     public TeamCommand(String teamSearched, GuildMessageReceivedEvent event) {
         Thirteen thirteen = new Thirteen();
         if (!thirteen.checkForTeamMatch(teamSearched)) {
@@ -31,9 +32,11 @@ public class TeamCommand {
             embed.addField("", "", true);
             for (int i = 0; i < thirteen.getRoster().size(); i++) {
 
+                embed.addField(thirteen.getRoster().get(i).toString(), thirteen.getFranchiseRoles().get(i) + "\n```" + thirteen.getRatings().get(i).toString() + "```", true);
 
-                embed.addField(thirteen.getRoster().get(i).toString(), "```" + thirteen.getRatings().get(i).toString() +  "```", true);
+
             }
+
 
             embed.setColor(thirteen.teamColor);
 
@@ -44,4 +47,6 @@ public class TeamCommand {
 
 
     }
+}
+
 }
