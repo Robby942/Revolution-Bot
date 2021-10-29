@@ -12,7 +12,8 @@ import java.util.Scanner;
 public class RosterCreator {
 
     ArrayList<String> players = new ArrayList<String>();
-    ArrayList<String> ratings = new ArrayList<String>();
+    ArrayList<Double> ratings = new ArrayList<Double>();
+    ArrayList<String> franchiseRoles = new ArrayList<String>();
 
     public RosterCreator(String team) {
         try {
@@ -52,7 +53,8 @@ public class RosterCreator {
                 for (int i = 0; i < array.size(); i++) {
                     if (array.get(i).equals(team.toUpperCase())) {
                         players.add(array.get(i - 6).toString());
-                        ratings.add(array.get(i + 1).toString());
+                        ratings.add(Double.parseDouble(array.get(i + 1).toString()));
+                        franchiseRoles.add(array.get(i + 3).toString());
 
 
                     }
@@ -77,16 +79,38 @@ public class RosterCreator {
     public ArrayList<String> getPlayers() {
 
         return this.players;
-
-
     }
 
-    public ArrayList<String> getRatings() {
+    public ArrayList<Double> getRatings() {
 
         return this.ratings;
 
     }
 
+    public ArrayList<String> getFranchiseRoles() {
+
+        for (int i = 0; i < franchiseRoles.size(); i++) {
+            if (franchiseRoles.get(i).equalsIgnoreCase("Owner")) {
+                franchiseRoles.set(i, "Owner");
+
+
+            } else if (franchiseRoles.get(i).equalsIgnoreCase("GM")) {
+                franchiseRoles.set(i, "General Manager");
+
+            } else if (franchiseRoles.get(i).equalsIgnoreCase("-") || franchiseRoles.get(i).equalsIgnoreCase("BHL") || franchiseRoles.get(i).equalsIgnoreCase("NAMHL") || franchiseRoles.get(i).equalsIgnoreCase("JBHL")) {
+                franchiseRoles.set(i, "Player");
+
+            }
+
+
+        }
+
+        return this.franchiseRoles;
+
+    }
+
 
 }
+
+
 
